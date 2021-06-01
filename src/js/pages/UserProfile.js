@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Page from "../components/Page";
 import { Link, useParams } from "react-router-dom";
 
+import { humanReadableTimestamp } from "../utils/helpers";
+
 import Loader from "../components/Loader";
 
 function UserProfile() {
@@ -37,10 +39,10 @@ function UserProfile() {
           <h4>User details:</h4>
           <h1>{id}</h1>
           <dl>
+            <dt>Join date</dt>
+            <dd>{humanReadableTimestamp(userData.created)}</dd>
             <dt>Karma</dt>
             <dd>{userData.karma}</dd>
-            <dt>Join date</dt>
-            <dd>{userData.created}</dd>
             <dt>Posts</dt>
             <dd>
               {typeof userData.submitted === "object"
