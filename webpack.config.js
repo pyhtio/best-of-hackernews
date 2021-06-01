@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = {
   mode: "development",
   entry: { index: path.resolve(__dirname, "src/js", "index.js") },
-  // output: { path: path.resolve(__dirname, "build") },
+  output: { publicPath: "/" },
   module: {
     rules: [
       {
@@ -23,4 +23,7 @@ module.exports = {
       template: path.resolve(__dirname, "src", "index.html"),
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };

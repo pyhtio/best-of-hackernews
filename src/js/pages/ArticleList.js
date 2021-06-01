@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-import ArticleListItem from "./ArticleListItem";
+import Page from "../components/Page";
+
+import ArticleListItem from "../components/ArticleListItem";
 
 function ArticleList() {
   const [articleIDs, setArticleIDs] = useState([]);
@@ -25,11 +27,18 @@ function ArticleList() {
   }, []);
 
   return (
-    <ul className="ArticleList">
-      {articleIDs.slice(0, 20).map((id) => {
-        return <ArticleListItem key={id} id={id} />;
-      })}
-    </ul>
+    <Page>
+      <header>
+        <h1>Best of Hackernews</h1>
+      </header>
+      <main>
+        <ul className="ArticleList">
+          {articleIDs.slice(0, 20).map((id) => {
+            return <ArticleListItem key={id} id={id} />;
+          })}
+        </ul>
+      </main>
+    </Page>
   );
 }
 

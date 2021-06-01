@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 import { humanReadableTimestamp } from "../utils/helpers";
 
@@ -40,7 +41,7 @@ function ArticleListItem({ id }) {
       </h3>
       <div className="ArticleList__meta">
         <p>
-          {articleData.by}
+          <Link to={"/creator/" + articleData.by}>{articleData.by}</Link>
           {", "}
           {humanReadableTimestamp(articleData.time)}
         </p>
