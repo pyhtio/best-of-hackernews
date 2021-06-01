@@ -1,0 +1,13 @@
+.Page {
+  margin: 0 auto;
+  max-width: 800px;
+
+  &__content {
+    padding: 15px;
+
+    @media screen and (min-width: 768px) {
+      padding-left: 25px;
+      padding-right: 25px;
+    }
+  }
+}

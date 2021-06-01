@@ -34,11 +34,11 @@ function ArticleListItem({ id }) {
 
   return (
     <li>
-      <h3>
+      <h2>
         <a target="_blank" href={articleData.url}>
           {articleData.title}
         </a>
-      </h3>
+      </h2>
       <div className="ArticleList__meta">
         <p>
           <Link to={"/creator/" + articleData.by}>{articleData.by}</Link>

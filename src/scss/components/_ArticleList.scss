@@ -8,6 +8,15 @@
     background: #fff;
     padding: 1em;
 
+    h2 {
+      font-size: 1em;
+      margin: 0;
+    }
+
+    p {
+      font-size: 0.8em;
+      margin: 0;
+    }
   }
 
   li + li {
@@ -16,6 +25,7 @@
 
   &__meta {
     width: 100%;
+    padding: 0.5em 0 0;
     display: flex;
     justify-content: space-between;
   }

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Page from "../components/Page";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 import { humanReadableTimestamp } from "../utils/helpers";
 
+import BackButton from "../components/BackButton";
 import Loader from "../components/Loader";
 
 function UserProfile() {
@@ -28,9 +29,7 @@ function UserProfile() {
 
   return (
     <Page>
-      <nav>
-        <Link to="/">Back</Link>
-      </nav>
+      <BackButton route="/" />
 
       {Object.keys(userData).length === 0 && <Loader />}
 
