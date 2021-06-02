@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 function BackButton({ route }) {
   return (
-    <nav class="BackButton">
+    <nav className="BackButton">
       <Link to={route}>Back</Link>
     </nav>
   );
