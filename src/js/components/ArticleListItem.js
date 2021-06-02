@@ -34,16 +34,16 @@ function ArticleListItem({ id }) {
 
   return (
     <li>
-      <h2>
+      <h3>
         <a
-          class="external"
+          className="external"
           target="_blank"
           rel="noopener noreferrer"
           href={articleData.url}
         >
           {articleData.title}
         </a>
-      </h2>
+      </h3>
       <div className="ArticleList__meta">
         <p>
           <Link to={"/creator/" + articleData.by}>{articleData.by}</Link>

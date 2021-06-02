@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import Page from "../components/Page";
 import { useParams } from "react-router-dom";
 
-import { humanReadableTimestamp } from "../utils/helpers";
-
+import UserCard from "../components/UserCard";
 import BackButton from "../components/BackButton";
 import Loader from "../components/Loader";
 
-function UserProfile() {
+function User() {
   const [userData, setUserData] = useState({});
 
   const { id } = useParams();
@@ -31,28 +30,12 @@ function UserProfile() {
     <Page>
       <BackButton route="/" />
 
-      {Object.keys(userData).length === 0 && <Loader />}
-
-      {"created" in userData && (
-        <main className="UserProfile">
-          <h4>User details:</h4>
-          <h1>{id}</h1>
-          <dl>
-            <dt>Join date</dt>
-            <dd>{humanReadableTimestamp(userData.created)}</dd>
-            <dt>Karma</dt>
-            <dd>{userData.karma}</dd>
-            <dt>Posts</dt>
-            <dd>
-              {typeof userData.submitted === "object"
-                ? userData.submitted.length
-                : ""}
-            </dd>
-          </dl>
-        </main>
-      )}
+      <main>
+        {Object.keys(userData).length === 0 && <Loader />}
+        {"created" in userData && <UserCard user={userData} />}
+      </main>
     </Page>
   );
 }
 
-export default UserProfile;
+export default User;
