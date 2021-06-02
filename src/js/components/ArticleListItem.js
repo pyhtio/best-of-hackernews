@@ -35,7 +35,12 @@ function ArticleListItem({ id }) {
   return (
     <li>
       <h2>
-        <a target="_blank" href={articleData.url}>
+        <a
+          class="external"
+          target="_blank"
+          rel="noopener noreferrer"
+          href={articleData.url}
+        >
           {articleData.title}
         </a>
       </h2>
